@@ -1,0 +1,29 @@
+{
+  "name": "2008-assignment1",
+  "version": "1.0.0",
+  "description": "Assignment 1",
+  "main": "index.js",
+  "source": "index.html",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sara-raja/2008-assignment1.git"
+  },
+  "author": "Shirasa Prajapati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sara-raja/2008-assignment1/issues"
+  },
+  "homepage": "https://github.com/sara-raja/2008-assignment1#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}
