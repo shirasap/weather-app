@@ -532,7 +532,8 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1Z4Rq":[function(require,module,exports) {
+var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
 
-},{}]},["gzp3I","1Z4Rq"], "1Z4Rq", "parcelRequire8976")
+},{"bootstrap/dist/css/bootstrap.min.css":"i5LP7"}],"i5LP7":[function() {},{}]},["gzp3I","1Z4Rq"], "1Z4Rq", "parcelRequire8976")
 
 //# sourceMappingURL=index.5d9dacde.js.map
