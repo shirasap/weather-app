@@ -561,7 +561,7 @@ parcelHelpers.export(exports, "getWeather", ()=>getWeather);
 const API_KEY = "ee162d1d6205476fb7bb45dc0f5151f3";
 // create getWeather function here
 const getWeather = (cityName)=>{
-    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`).then((response)=>{
+    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`).then((response)=>{
         return response.json();
     }).then((data)=>{
         console.log(data);
@@ -623,8 +623,8 @@ const renderWeather = (weatherData, divElement)=>{
     let element = `<div class="mt-2 card" >
     <div class="card-body">
       <h5 class="card-title">${weatherData.name}, ${weatherData.sys.country}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${weatherData.main.temp}</h6>
-      <p class="card-text">${weatherData.weather.description}</p>
+      <h6 class="card-subtitle mb-2 text-muted">${weatherData.main.temp}°C</h6>
+      <p class="card-text">${weatherData.weather[0].description}</p>
     </div>
   </div>`;
     divElement.innerHTML = element;
