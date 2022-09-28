@@ -535,7 +535,7 @@ function hmrAcceptRun(bundle, id) {
 var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
 var _base = require("./api/base");
 var _weather = require("./dom/weather");
-let weatherContainerElem = document.querySelector(".weather-container");
+let weatherContainerElement = document.querySelector(".weather-container");
 let citySearchForm = document.querySelector("#weather-search");
 citySearchForm.addEventListener("submit", (event)=>{
     event.preventDefault();
@@ -547,7 +547,7 @@ citySearchForm.addEventListener("submit", (event)=>{
         console.log("display weather of " + cityInputValue);
         (0, _base.getWeather)(cityInputValue).then((data)=>{
             console.log(data);
-            (0, _weather.renderWeather)(data, weatherContainerElem);
+            (0, _weather.renderWeather)(data, weatherContainerElement);
         });
     }
 });
@@ -564,6 +564,7 @@ const getWeather = (cityName)=>{
     return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`).then((response)=>{
         return response.json();
     }).then((data)=>{
+        console.log(data);
         return data;
     });
 };
@@ -605,7 +606,6 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderWeather", ()=>renderWeather);
 /*
 HTML Structure 
-
 
 Note: I'm sure you've read the PDF but there will be no marks given
 for using innerHTML. 

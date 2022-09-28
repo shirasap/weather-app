@@ -1,7 +1,6 @@
 /*
 HTML Structure 
 
-
 Note: I'm sure you've read the PDF but there will be no marks given
 for using innerHTML. 
 

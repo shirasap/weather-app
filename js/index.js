@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { getWeather } from './api/base'
 import { renderWeather } from './dom/weather'
 
-let weatherContainerElem = document.querySelector(".weather-container")
+let weatherContainerElement = document.querySelector(".weather-container")
 let citySearchForm = document.querySelector("#weather-search")
 
 citySearchForm.addEventListener("submit", (event)=>{
@@ -20,7 +20,7 @@ citySearchForm.addEventListener("submit", (event)=>{
 
         getWeather(cityInputValue).then((data)=>{
             console.log(data)
-            renderWeather(data, weatherContainerElem)
+            renderWeather(data, weatherContainerElement)
         })
     }
 

@@ -9,6 +9,7 @@ const getWeather = (cityName) =>{
     .then((response)=>{
         return response.json()
     }).then ((data)=>{
+        console.log(data)
         return data
     })
 }
