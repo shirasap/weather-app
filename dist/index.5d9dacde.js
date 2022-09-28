@@ -533,7 +533,103 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"1Z4Rq":[function(require,module,exports) {
 var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
+var _base = require("./api/base");
+var _weather = require("./dom/weather");
+let weatherContainerElem = document.querySelector(".weather-container");
+let citySearchForm = document.querySelector("#weather-search");
+citySearchForm.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    let cityInput = event.target.elements["city-name"];
+    let cityInputValue = cityInput.value;
+    // console.log(cityInputValue)
+    if (cityInputValue === "") cityInput.classList.add("is-invalid");
+    else {
+        console.log("display weather of " + cityInputValue);
+        (0, _base.getWeather)(cityInputValue).then((data)=>{
+            console.log(data);
+            (0, _weather.renderWeather)(data, weatherContainerElem);
+        });
+    }
+});
 
-},{"bootstrap/dist/css/bootstrap.min.css":"i5LP7"}],"i5LP7":[function() {},{}]},["gzp3I","1Z4Rq"], "1Z4Rq", "parcelRequire8976")
+},{"bootstrap/dist/css/bootstrap.min.css":"i5LP7","./api/base":"ffrQO","./dom/weather":"gj29j"}],"i5LP7":[function() {},{}],"ffrQO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// export the getWeather function
+parcelHelpers.export(exports, "getWeather", ()=>getWeather);
+// replace your api key 
+const API_KEY = "ee162d1d6205476fb7bb45dc0f5151f3";
+// create getWeather function here
+const getWeather = (cityName)=>{
+    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        return data;
+    });
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"gj29j":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// export the renderWeather function
+parcelHelpers.export(exports, "renderWeather", ()=>renderWeather);
+/*
+HTML Structure 
+
+
+Note: I'm sure you've read the PDF but there will be no marks given
+for using innerHTML. 
+
+<div class="mt-2 card" >
+  <div class="card-body">
+    <h5 class="card-title">CITY_NAME_HERE, COUNTRY_CODE_HERE</h5>
+    <h6 class="card-subtitle mb-2 text-muted">CURRENT_WEATHER_DEGREES_HERE</h6>
+    <p class="card-text">WEATHER_DESCRIPTION_HERE</p>
+  </div>
+</div>
+
+*/ // renderWeather function
+const renderWeather = (weatherData, divElement)=>{
+    let element = `<div class="mt-2 card" >
+    <div class="card-body">
+      <h5 class="card-title">${weatherData.name}, ${weatherData.sys.country}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${weatherData.main.temp}</h6>
+      <p class="card-text">${weatherData.weather.description}</p>
+    </div>
+  </div>`;
+    divElement.innerHTML = element;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["gzp3I","1Z4Rq"], "1Z4Rq", "parcelRequire8976")
 
 //# sourceMappingURL=index.5d9dacde.js.map

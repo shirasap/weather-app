@@ -17,4 +17,17 @@ for using innerHTML.
 
 // renderWeather function
 
+const renderWeather = (weatherData, divElement) =>{
+  let element =`<div class="mt-2 card" >
+    <div class="card-body">
+      <h5 class="card-title">${weatherData.name}, ${weatherData.sys.country}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${weatherData.main.temp}</h6>
+      <p class="card-text">${weatherData.weather.description}</p>
+    </div>
+  </div>`
+
+  divElement.innerHTML = element
+}
+
 // export the renderWeather function
+export {renderWeather}
