@@ -9,7 +9,7 @@ let citySearchForm = document.querySelector("#weather-search")
 citySearchForm.addEventListener("submit", (event)=>{
     event.preventDefault()
     let cityInput = event.target.elements["city-name"]
-    let cityInputValue = cityInput.value
+    let cityInputValue = cityInput.value.trim()
 
     // console.log(cityInputValue)
     if(cityInputValue === ""){
