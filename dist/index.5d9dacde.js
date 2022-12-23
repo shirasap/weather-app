@@ -607,9 +607,6 @@ parcelHelpers.export(exports, "renderWeather", ()=>renderWeather);
 /*
 HTML Structure 
 
-Note: I'm sure you've read the PDF but there will be no marks given
-for using innerHTML. 
-
 <div class="mt-2 card" >
   <div class="card-body">
     <h5 class="card-title">CITY_NAME_HERE, COUNTRY_CODE_HERE</h5>
