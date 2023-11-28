@@ -1,0 +1,1 @@
+{"mappings":"AAAC;;;;AAGC","sources":["css/main.css"],"sourcesContent":[" .container-sm {\r\n    max-width: 760px;\r\n  }\r\n  .card-body {\r\n    display: flex;\r\n    justify-content: space-between;\r\n  }"],"names":[],"version":3,"file":"index.47ca9330.css.map","sourceRoot":"/__parcel_source_root/"}

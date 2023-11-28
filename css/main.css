@@ -1,1 +1,7 @@
-/* our custom CSS file*/ 
+ .container-sm {
+    max-width: 760px;
+  }
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+  }

@@ -1,0 +1,10 @@
+.container-sm {
+  max-width: 760px;
+}
+
+.card-body {
+  justify-content: space-between;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.47ca9330.css.map */
