@@ -19,6 +19,7 @@ const renderWeather = (weatherData, divElement) =>{
       <h5 class="card-title">${weatherData.name}, ${weatherData.sys.country}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${weatherData.main.temp} °C</h6>
       <p class="card-text">${weatherData.weather[0].description}</p>
+      <img src="${weather.weather.icon}"/>
     </div>
   </div>`
 
