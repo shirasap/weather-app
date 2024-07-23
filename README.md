@@ -1,5 +1,4 @@
-Short description
--A weather app that displays the weather of a city from open weather map API, using the value inserted into the search bar and using the value to display the correct result.
+- A simple weather app that utilizes the open weather map API to display the weather of different cities.
 
 View project here: 
 https://2008-weather-app.vercel.app/
